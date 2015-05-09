@@ -7,7 +7,7 @@ $valid_fields = array('username', 'nick', 'password', 'name', 'first',
 	'date', 'misc', 'text', 'key');
 
 define('XMPP_HOST', 'earthbot.net');
-define('XMPP_CONN', 'earthbot.net');
+define('XMPP_CONN', 'localhost');
 define('XMPP_PORT', '5222');
 // TODO Optional SRV lookup.
 
