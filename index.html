@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      XEP-0077: In-Band Registration
+      http://xmpp.org/extensions/xep-0077.html
+    -->
+    <meta charset="utf-8">
+    <title>Register an Earthbot account</title>
+  </head>
+  <body>
+    <form accept-charset="utf-8" action="mkacct.php" enctype="multipart/form-data" method="post">
+      <fieldset>
+        <legend>Account details</legend>
+        <p>Please enter an easy to remember password. There is no way to get your account back if you lose the password.</p>
+        <dl>
+          <dt><label for="username">Username</label></dt>
+          <dd><input class="txt" id="username" maxlength="1023" name="username" pattern="^[^\u0000-\u001f\u0020\u0022\u0026\u0027\u002f\u003a\u003c\u003e\u0040\u007f\u0080-\u009f\u00a0]+$" placeholder="alice" required title="Must not contain &quot; ' &amp; / : &lt; &gt; @ or space" type="text"><span>@earthbot.net</span></dd>
+          <dt><label for="password">Password</label></dt>
+          <dd><input class="txt" id="password" name="password" onchange="this.form.password_confirm.pattern='^'+(function(s){ r=''; for(i=0;i&lt;s.length;i++){ r+=('000'+s.charCodeAt(i).toString(16)).replace(/^.*(....)$/,'\\u$1'); } return r;})(this.value)+'$'" placeholder="●●●●●●●●" required type="password"></dd>
+          <dt><label for="password_confirm">Confirm</label></dt>
+          <dd><input class="txt" id="password_confirm" name="password_confirm" placeholder="●●●●●●●●" required title="Must be the same as the Password field" type="password"></dd>
+        </dl>
+        <div class="submit"><input class="btn" type="submit" value="Register account"></div>
+      </fieldset>
+    </form>
+  </body>
+</html>
+
